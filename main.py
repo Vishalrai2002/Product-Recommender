@@ -24,12 +24,17 @@ model = tensorflow.keras.Sequential([
     GlobalMaxPooling2D()
 ])
 
+
+
 st. set_page_config(page_title="BrainCafe",page_icon="",layout="wide")
 import numpy as np
    
+
 image = Image.open('logo.png')
 
-st.image(image, caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+st.image(image, caption=None, width=200, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+ 
+
 page = """ <div class="container-fluid bg-primary Header fixed-top">
         <div class="row py-2 d-flex">
             <!-- Logo -->
@@ -185,7 +190,7 @@ def recommend(features,feature_list):
 # uploaded_file = st.file_uploader("Choose an image")
 with st.chat_message("user"):
     st.write("Hello 👋")
-    st.write("I am your flipkart assiatant...")
+    st.write("I am your Personal Assiatant...")
     st.write("Please Upload the image for you want Recommendation")
     uploaded_file = st.file_uploader("Choose an image")
     # st.line_chart(np.random.randn(30, 3))
