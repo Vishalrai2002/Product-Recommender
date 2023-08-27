@@ -24,11 +24,20 @@ model = tensorflow.keras.Sequential([
     GlobalMaxPooling2D()
 ])
 
+#python -m streamlit run main.py
 
 
 st. set_page_config(page_title="BrainCafe",page_icon="",layout="wide")
 import numpy as np
    
+
+# Use local CSS
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+local_css("style/style.css")
+
+
 
 image = Image.open('logo.png')
 
@@ -266,3 +275,28 @@ if uploaded_file is not None:
             
     else:
         st.header("Some error occured in file upload")
+        
+        
+        
+# contact
+
+with st.container():
+        st.write("---")
+        st.header("Get In Touch With Us!")
+        st.write("##")
+        
+        contact_form="""
+        <form action="https://formsubmit.co/raivishal261252@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send!</button>
+        </form>
+        """
+        left_column, right_column = st.columns(2)
+        with left_column:
+            st.markdown(contact_form, unsafe_allow_html=True)
+        with right_column:
+            st.empty()
+        
