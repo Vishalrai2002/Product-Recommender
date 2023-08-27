@@ -27,15 +27,14 @@ model = tensorflow.keras.Sequential([
 #python -m streamlit run main.py
 
 
-st. set_page_config(page_title="BrainCafe",page_icon="",layout="wide")
-import numpy as np
+st. set_page_config(page_title="BrainCafe",page_icon="✌",layout="wide")
    
 
 # Use local CSS
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-local_css("style/style.css")
+local_css("style/styleForm.css")
 
 
 
