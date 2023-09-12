@@ -10,7 +10,9 @@ from tensorflow.keras.applications.resnet50 import ResNet50,preprocess_input
 from sklearn.neighbors import NearestNeighbors
 from numpy.linalg import norm
 import streamlit.components.v1 as components
-from PIL import Image
+
+
+# python -m streamlit run main.py
 
 
 feature_list = np.array(pickle.load(open('embeddings.pkl','rb')))
@@ -24,24 +26,24 @@ model = tensorflow.keras.Sequential([
     GlobalMaxPooling2D()
 ])
 
-#python -m streamlit run main.py
+st. set_page_config(page_title="BrainCafe",page_icon="",layout="wide")
+import numpy as np
 
+    
+# st.image("", caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+import streamlit as st
 
-st. set_page_config(page_title="BrainCafe",page_icon="✌",layout="wide")
-   
+# Define your title text
+title_text = "BrainCafe"
 
-# Use local CSS
-def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-local_css("style/styleForm.css")
+# Define the desired color (e.g., "red", "#00ff00", "rgb(255, 0, 0)")
+color = "red"
 
+# Create a custom HTML element with CSS styling
+styled_title = f'<h1 style="color: {color};">{title_text}</h1>'
 
-
-image = Image.open('logo.png')
-
-st.image(image, caption=None, width=200, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
- 
+# Display the styled title using st.markdown
+st.markdown(styled_title, unsafe_allow_html=True)
 
 page = """ <div class="container-fluid bg-primary Header fixed-top">
         <div class="row py-2 d-flex">
@@ -165,7 +167,7 @@ page = """ <div class="container-fluid bg-primary Header fixed-top">
         </div>
     </div> """
 
-st.title('Find Product from Image "Recommender System"')
+st.title('Find Product from Image "Personalized Product Recommendations system"')
 
 def save_uploaded_file(uploaded_file):
     try:
@@ -216,7 +218,7 @@ if uploaded_file is not None:
         indices = recommend(features,feature_list)
         # show
         message = st.chat_message("user")
-        message.write("Hello human here are some recommendations :")
+        message.write("Hello👋 here are some recommendations :")
         # message.bar_chart(np.random.randn(30, 3))
         col1,col2,col3,col4,col5 = st.columns(5)
 
@@ -274,28 +276,4 @@ if uploaded_file is not None:
             
     else:
         st.header("Some error occured in file upload")
-        
-        
-        
-# contact
 
-with st.container():
-        st.write("---")
-        st.header("Get In Touch With Us!")
-        st.write("##")
-        
-        contact_form="""
-        <form action="https://formsubmit.co/contact@gmail.com" method="POST">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send!</button>
-        </form>
-        """
-        left_column, right_column = st.columns(2)
-        with left_column:
-            st.markdown(contact_form, unsafe_allow_html=True)
-        with right_column:
-            st.empty()
-        
