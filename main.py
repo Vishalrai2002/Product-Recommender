@@ -45,127 +45,18 @@ styled_title = f'<h1 style="color: {color};">{title_text}</h1>'
 # Display the styled title using st.markdown
 st.markdown(styled_title, unsafe_allow_html=True)
 
-page = """ <div class="container-fluid bg-primary Header fixed-top">
-        <div class="row py-2 d-flex">
-            <!-- Logo -->
-            <div class="col logo offset-lg-1">
-                <a href="#">
-                    <img width="75" src="//img1a.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png"
-                        alt="Flipkart" title="Flipkart">
-                </a>
-                <a href="#">Explore <span>Plus</span>
-                    <img width="10" src="//img1a.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png">
-                </a>
-            </div>
-
-            <!-- Search -->
-            <div class="col col-md-4  search d-flex dropdown bg-white">
-                <input class="form-control dropdown-toggle" type="search"
-                    placeholder="Search for products, brands and more" aria-label="Search" id="navbarDropdown"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-search mt-2 ml-sm-1 text-primary"></i>
-                <div class="dropdown-menu col-12 search-item" aria-labelledby="navbarDropdown">
-                    <h6 class="ml-4">Discover More</h6>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>mobiles</a>
-                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>t-shirts</a>
-                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>shoes</a>
-                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>laptop</a>
-                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>tv</a>
-                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>sarees</a>
-                </div>
-            </div>
-
-            <div class="col upload">
-                <button class="form-control"><a href="http://localhost:8501">upload image</a></button>
-            </div>
-
-            <!-- Login -->
-            <div class="col dropdown login">
-                <button class="btn bg-white text-primary" type="button" id="loginMenuButton" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="true">
-                    Login
-                </button>
-                <div class="dropdown-menu login-list col-12 aria-labelledby=" loginMenuButton">
-                    <div class="d-flex">
-                        <h6 class="ml-md-1">New Customer?</h6>
-                        <a href="#" class="ml-auto mr-2" id="signUp">Sign Up</a>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <div class="d-flex">
-                        <i class="fa fa-user-circle text-primary mt-2 ml-2" aria-hidden="true"></i>
-                        <a class="dropdown-item" href="">My Profile</a>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <div class="d-flex">
-                        <i class="fa fa-plus text-primary mt-2 ml-2" aria-hidden="true"></i>
-                        <a class="dropdown-item" href="">Flipkart Plus Zone</a>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <div class="d-flex">
-                        <i class="fa fa-book text-primary mt-2 ml-2" aria-hidden="true"></i>
-                        <a class="dropdown-item" href="">Orders</a>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <div class="d-flex">
-                        <i class="fa fa-heart text-primary mt-2 ml-2" aria-hidden="true"></i>
-                        <a class="dropdown-item" href="">Wishlist</a>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <div class="d-flex">
-                        <i class="fa fa-chess-bishop text-primary mt-2 ml-2" aria-hidden="true"></i>
-                        <a class="dropdown-item" href="">Rewards</a>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <div class="d-flex">
-                        <i class="fa fa-gift text-primary mt-2 ml-2" aria-hidden="true"></i>
-                        <a class="dropdown-item" href="">Gift Cards</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- More -->
-            <div class="col dropdown more">
-                <a class="btn dropdown-toggle text-white ml-lg-2 ml-sm-0" href="#" role="button" id="moreMenuLink"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </a>
-
-                <div class="dropdown-menu more-list" aria-labelledby="moreMenuLink">
-                    <div class="d-flex">
-                        <i class="fa fa-bell text-primary ml-md-3 mt-2" aria-hidden="true"></i>
-                        <a class="dropdown-item" href="#">Notification Preferences</a>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <div class="d-flex">
-                        <i class="fa fa-archive text-primary ml-md-3 mt-2" aria-hidden="true"></i>
-                        <a class="dropdown-item" href="#">Sell On Flipkart</a>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <div class="d-flex">
-                        <i class="fa fa-question-circle text-primary ml-md-3 mt-2" aria-hidden="true"></i>
-                        <a class="dropdown-item" href="#">24x7 Customer Care</a>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <div class="d-flex">
-                        <i class="fa fa-chart-line text-primary ml-md-3 mt-2" aria-hidden="true"></i>
-                        <a class="dropdown-item" href="#">Advertise</a>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <div class="d-flex">
-                        <i class="fa fa-download text-primary ml-md-3 mt-2" aria-hidden="true"></i>
-                        <a class="dropdown-item" href="#">Download App</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cart -->
-            <div class="col col-md-1 d-flex justify-content-center">
-                <i class="fa fa-shopping-cart text-white mt-2" aria-hidden="true"></i>
-                <a href="" class="btn text-white">Cart</a>
-            </div>
-        </div>
-    </div> """
+page = """ <nav>
+            <ul id="MenuItems">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="http://localhost:8501">Upload Image</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Contact</a></li>
+              <li><a href="account.html">Account</a></li>
+              <!-- TODo: 22:20 -->
+            </ul>
+          </nav>  
+          """
 
 st.title('Find Product from Image "Personalized Product Recommendations system"')
 
@@ -208,7 +99,7 @@ if uploaded_file is not None:
     if save_uploaded_file(uploaded_file):
         # display the file
         with st.chat_message("user"):
-            st.write("Showing recommendations for this Inmage : ")
+            st.write("Showing recommendations for this Image : ")
         display_image = Image.open(uploaded_file)
         st.image(display_image)
         # feature extract
